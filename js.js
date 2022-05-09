@@ -1,7 +1,12 @@
-let car = { left: 27 }
+let car = {
+    left: 27
+}
 let carVal = document.getElementById('car');
 let enemy = document.getElementById('enemy');
-let enemy__po = { left: Math.floor(Math.random() * 4), eq: Math.floor(Math.random() * 3) }
+let enemy__po = {
+    left: Math.floor(Math.random() * 4),
+    eq: Math.floor(Math.random() * 3)
+}
 
 // Code for Chrome, Safari and Opera
 enemy.addEventListener("webkitAnimationIteration", myRepeatFunction);
@@ -12,10 +17,18 @@ enemy.addEventListener("animationiteration", myRepeatFunction);
 // Enemies movements
 function myRepeatFunction() {
     enemy__po.left = Math.floor(Math.random() * 4)
-    if (enemy__po.left == 0) { enemy__po.left = 27 }
-    if (enemy__po.left == 1) { enemy__po.left = 39 }
-    if (enemy__po.left == 2) { enemy__po.left = 51 }
-    if (enemy__po.left == 3) { enemy__po.left = 63 }
+    if (enemy__po.left == 0) {
+        enemy__po.left = 27
+    }
+    if (enemy__po.left == 1) {
+        enemy__po.left = 39
+    }
+    if (enemy__po.left == 2) {
+        enemy__po.left = 51
+    }
+    if (enemy__po.left == 3) {
+        enemy__po.left = 63
+    }
     enemy.style.setProperty('--en-left', enemy__po.left + '%');
 }
 
@@ -23,6 +36,9 @@ function myRepeatFunction() {
 function lose() {
     if (enemy.offsetTop + 150 >= carVal.offsetTop && enemy.offsetLeft == carVal.offsetLeft) {
         // Game over Results
+
+        document.getElementById("carHome").classList.add('hide');
+        document.getElementById("over").classList.remove('hide');
     }
 }
 
