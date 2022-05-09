@@ -1,0 +1,115 @@
+:root {
+    --left:0;
+    --right:0; 
+    --top:0;
+    /* --en-top:0;
+    --en-top-plus:110%; */
+    --en-top-plus:2s ;
+    --en-display:'block'
+}
+  
+
+body{
+    overflow: hidden;
+}
+
+#car{
+
+    width: 7%;
+    height: 150px;
+    background-color: #fff;
+    position: fixed;
+    bottom: 15px;
+    margin: 0 auto;
+    left: var(--left);
+    right: var(--right);
+}
+/* .hide{
+    visibility: hidden;
+} */
+.enemy{
+    width: 7%;
+    height: 150px;
+    background-color: #fff;
+    position: fixed;
+    /* top: var(--en-top); */
+    margin: 0 auto;
+    left: var(--en-left);
+    /* right: var(--en-right); */
+    /* visibility:var(--en-display) ; */
+
+    animation: enemy__movement var(--en-top-plus) linear infinite;
+
+}
+@keyframes enemy__movement {
+    0% {
+      top: -5%;
+    }
+    100% {
+      top:110%;
+    }
+  }
+
+
+.line {
+    position: absolute;
+    width: 2%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    display: grid;
+    grid-gap: 20%;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    animation: road-line 1s linear infinite;
+    overflow: hidden;
+  }
+
+  .l2 {
+    left: 25%;
+  }
+
+  .l3 {
+    left: 75%;
+}
+  
+  .line-section {
+    background-color: white;
+  }
+  
+  @keyframes road-line {
+    0% {
+      bottom: 0px;
+    }
+    100% {
+      bottom: -30%;
+    }
+  }
+
+
+
+*{
+    margin:0;
+    padding:0;
+    transition: 0.15s ease-in;
+}
+
+.carGame{
+    width:100%;
+    height:100vw;
+    background: #006400;
+    /*background: url(back.jpg);*/
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    
+}
+
+.gameArea{
+    height:100vh;
+    width:50%;
+    background: #2c3456;
+    margin:auto;
+    position:relative;
+    overflow:hidden;
+    border-right:7px dashed #c8d6e5;
+    border-left:7px dashed #c8d6e5;
+}
